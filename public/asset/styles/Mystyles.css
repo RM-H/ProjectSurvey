@@ -1,0 +1,115 @@
+/*----------------*/
+/*-----fonts------*/
+/*----------------*/
+
+@font-face {
+    font-family: 'yekan-reg';
+    src: url("../fonts/yekan.woff2");
+}
+
+
+/*----------------*/
+/*------core------*/
+/*----------------*/
+
+
+body {
+    font-family: yekan-reg;
+}
+
+
+.maincontainer {
+    min-height: 100dvh;
+    width: 100dvw;
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+.h100 {
+    height: 100% !important;
+}
+
+.w100 {
+    width: 100%;
+}
+
+.columns {
+    margin: 0;
+}
+
+
+/*----------------*/
+/*----colors------*/
+/*----------------*/
+
+.clrone {
+    background-color: #4FE8E3 !important;
+}
+
+.clrtwo {
+    background-color: #1B95A2;
+}
+
+.clrtwotext {
+    color: #1B95A2;
+}
+
+.clrthree {
+    background-color: #737375;
+}
+
+.clrfour {
+    background-color: #E1C886;
+}
+
+.clrfive {
+    background-color: #AB9D7C;
+}
+
+.clrsix {
+    background-color: #FF4941;
+}
+
+.clrsixtext {
+    color: #FF4941;
+}
+
+.clrseventext {
+    color: #FFFFff;
+}
+
+.clreight {
+    background-color: #f2f1ec;
+}
+
+
+/*----------------*/
+/*-margins paddings-*/
+/*----------------*/
+
+.paddingx {
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+
+/*-----------------------------*/
+/*---------shadows------------*/
+/*----------------------------*/
+
+
+.shadowone {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+
+
+/*-----------------------------*/
+/*--borders and border rads----*/
+/*----------------------------*/
+.borderrad1 {
+    border-radius: 0.6rem;
+}
+
