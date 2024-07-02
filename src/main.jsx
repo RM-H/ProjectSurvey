@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client'
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import Mainlayout from "./layouts/Mainlayout.jsx";
 import Landing from "./page/Landing.jsx";
+import Questions from "./page/Questions.jsx";
+import Thanks from "./page/Thanks.jsx";
 
 const router = createBrowserRouter([
     {
@@ -14,8 +16,16 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Landing/>
+            },
+            {
+                path: '/survey',
+                element: <Questions/>
+            },
+            {
+                path: '/thanks',
+                element: <Thanks/>
             }
-            ]
+        ]
     }
 ]);
 ReactDOM.createRoot(document.getElementById('root')).render(

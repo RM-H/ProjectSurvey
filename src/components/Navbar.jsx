@@ -4,14 +4,12 @@ const Navbar = () => {
 
             <nav className="navbar" role="navigation" aria-label="main navigation">
                 <div className="navbar-brand">
-                    <a className="navbar-item">
-                        <img src="/asset/images/logo.png" alt=""/>
 
-                    </a>
+                    <img src="/asset/images/logo.png" alt="" style={{maxHeight: '3rem'}}/>
 
 
                     <a className="navbar-item">
-                       به سیستم رضایت سنجی افق ایرانیان خوش آمدید.
+                        سیستم رضایت سنجی افق ایرانیان
                     </a>
 
 

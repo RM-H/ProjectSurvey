@@ -7,13 +7,17 @@ const Mainlayout = () => {
 
     return (
         <>
-            <div className='maincontainer clreight'>
+            <div className='maincontainer clrnine' style={{
+                backgroundImage: 'url(/asset/images/wallpaper.svg)',
+                backgroundSize: 'cover',
+                backgroundRepeat: 'no-repeat',
+
+            }}>
                 <Nav/>
 
 
                 <Outlet/>
             </div>
-
 
 
         </>

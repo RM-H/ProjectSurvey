@@ -11,7 +11,10 @@
 /*----------------*/
 /*------core------*/
 /*----------------*/
-
+:root {
+    --background-color: white;
+    --text-color: black;
+}
 
 body {
     font-family: yekan-reg;
@@ -21,10 +24,12 @@ body {
 .maincontainer {
     min-height: 100dvh;
     width: 100dvw;
-    display: flex;
-    flex-direction: column;
 
 
+
+}
+.button {
+    outline: none;
 }
 
 .h100 {
@@ -75,6 +80,9 @@ body {
 .clrsixtext {
     color: #FF4941;
 }
+.clrseven {
+    background-color: #FFFFff;
+}
 
 .clrseventext {
     color: #FFFFff;
@@ -84,14 +92,23 @@ body {
     background-color: #f2f1ec;
 }
 
+.clrnine {
+    background-color: rgba(236, 236, 236, 0.4);
+}
+
+.clrten {
+    background-color: rgba(236, 236, 236, 0.6);
+    backdrop-filter: blur(0.6rem);
+}
+
 
 /*----------------*/
 /*-margins paddings-*/
 /*----------------*/
 
 .paddingx {
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 
@@ -101,7 +118,7 @@ body {
 
 
 .shadowone {
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0.4);
 }
 
 
@@ -111,5 +128,13 @@ body {
 /*----------------------------*/
 .borderrad1 {
     border-radius: 0.6rem;
+}
+
+
+
+
+
+.bordercircle {
+    border-radius: 50%;
 }
 
