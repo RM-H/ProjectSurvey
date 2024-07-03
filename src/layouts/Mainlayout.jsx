@@ -1,5 +1,5 @@
 import {Outlet} from 'react-router-dom'
-import {Nav} from '../components'
+
 
 
 const Mainlayout = () => {
@@ -13,7 +13,7 @@ const Mainlayout = () => {
                 backgroundRepeat: 'no-repeat',
 
             }}>
-                <Nav/>
+
 
 
                 <Outlet/>

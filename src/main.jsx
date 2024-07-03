@@ -5,6 +5,7 @@ import Mainlayout from "./layouts/Mainlayout.jsx";
 import Landing from "./page/Landing.jsx";
 import Questions from "./page/Questions.jsx";
 import Thanks from "./page/Thanks.jsx";
+import Results_admin from "./page/Results_admin.jsx";
 
 const router = createBrowserRouter([
     {
@@ -14,7 +15,7 @@ const router = createBrowserRouter([
 
         children: [
             {
-                path: '/',
+                path: '/:token',
                 element: <Landing/>
             },
             {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
                 element: <Thanks/>
             }
         ]
+    },
+    {
+        path: '/show/:token',
+        element: <Results_admin/>
     }
 ]);
 ReactDOM.createRoot(document.getElementById('root')).render(

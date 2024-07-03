@@ -10,25 +10,26 @@ const Questions = () => {
     const [totalPages, setTotoalPages] = useState(false)
     const [currentPage, setCurrentPage] = useState(1)
 
+    const users = JSON.parse(localStorage.getItem('data'))
 
-    let testdata = ['برنامه نویس 1', 'برنامه نویس 2', 'برنامه نویس 3', 'برنامه نویس 4', 'برنامه نویس 5']
     useEffect(() => {
 
-        setTotoalPages(testdata.length + 1)
+
+        setTotoalPages(users.surveyusers.length + 1)
 
     }, []);
 
     let content
     if (currentPage === 1) {
-        content = <Questionitem/>
+        content = <Questionitem info={users}/>
     } else {
-        content = <EmployeeQuestion info={testdata[currentPage - 2]}/>
+        content = <EmployeeQuestion questions={users.survey}  info={users.surveyusers[currentPage - 2]}/>
     }
 
 
     return (
         <>
-            <div className='columns is-multiline paddingx' style={{minHeight: '90dvh'}}>
+            <div className='columns is-multiline paddingx dvh pt-3'>
 
 
                 {
@@ -42,7 +43,7 @@ const Questions = () => {
 
                     {
                         currentPage !== 1 && (
-                            <button className='button clrtwo clrseventext mb-4 mx-3 ' onClick={() => {
+                            <button className='button clrfour is-color-black mb-4 mx-3 ' onClick={() => {
                                 if (currentPage > 1) {
                                     setCurrentPage((prev) => prev - 1)
                                 }
@@ -63,7 +64,7 @@ const Questions = () => {
                     {
 
                         currentPage < totalPages && (
-                            <button className='button clrtwo clrseventext mb-4 mx-3  ' onClick={() => {
+                            <button className='button clrfour is-color-black mb-4 mx-3  ' onClick={() => {
                                 if (currentPage < totalPages) {
                                     setCurrentPage((prev) => prev + 1)
                                 }
@@ -77,21 +78,21 @@ const Questions = () => {
                         )
                     }
 
+                    {
+                        currentPage === totalPages && (
 
-                </div>
 
-                {
-                    currentPage === totalPages && (
-
-                        <div className='column is-12 has-text-centered '>
-                            <button className='button clrtwo clrseventext w100' onClick={() => nav('/thanks')}>
+                            <button className='button clrfour is-color-black mb-4 w100' onClick={() => nav('/thanks')}>
                                 ثبت و ادامه
                             </button>
 
-                        </div>
-                    )
 
-                }
+                        )
+
+                    }
+
+
+                </div>
 
 
             </div>
