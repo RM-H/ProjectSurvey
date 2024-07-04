@@ -9,4 +9,9 @@ export const getInfo= (token)=>{
 }
 
 
+export const submitSurvey= (data)=>{
+    return axios.post(`${url}/save`, data)
+}
+
+
 

@@ -267,7 +267,11 @@ const Questionitem = ({info}) => {
 
                     </div>
                     :
-                    <Spinner/>
+                    <div className='column is-12 mt-6 is-flex is-align-items-center is-justify-content-center '
+                         style={{minHeight: '60dvh'}}>
+                        <Spinner/>
+                    </div>
+
 
             }
 

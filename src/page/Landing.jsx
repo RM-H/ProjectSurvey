@@ -15,8 +15,9 @@ const Landing = () => {
         const response = await getInfo(formdata)
         if (response.data.code == 1) {
 
+
             if (response.data.survey.done == 1) {
-                nav('/thanks')
+                nav('/survey/thanks')
             } else {
                 console.log(response.data)
                 localStorage.setItem('data', JSON.stringify(response.data))
@@ -32,9 +33,9 @@ const Landing = () => {
                     },
                     'emloyees':
 
-                        response.data.surveyusers.map((item) => {
+                        response.data.users.map((item) => {
                             return {
-                                'user_id': item.user_id,
+                                'user_id': item.id,
                                 'question1_answer': 3,
                                 'question2_answer': 3,
                                 'question3_answer': 3,
@@ -146,7 +147,7 @@ const Landing = () => {
 
 
                     <button disabled={!data} className='button clrfour is-color-black  my-3'
-                            onClick={() => nav('/survey')}>
+                            onClick={() => nav('/survey/survey')}>
                         ادامه
                     </button>
                 </div>

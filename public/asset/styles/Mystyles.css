@@ -76,7 +76,7 @@ p {
 }
 
 .clrtwo {
-    background-color: #1B95A2;
+    background-color: #1B95A2 !important;
 }
 
 .clrtwotext {
@@ -108,7 +108,7 @@ p {
 }
 
 .clrseventext {
-    color: #FFFFff;
+    color: #FFFFff !important;
 }
 
 .clreight {

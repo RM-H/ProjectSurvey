@@ -9,27 +9,27 @@ import Results_admin from "./page/Results_admin.jsx";
 
 const router = createBrowserRouter([
     {
-        path: "/",
+        path: "/survey",
         element: <Mainlayout/>,
 
 
         children: [
             {
-                path: '/:token',
+                path: '/survey/:token',
                 element: <Landing/>
             },
             {
-                path: '/survey',
+                path: '/survey/survey',
                 element: <Questions/>
             },
             {
-                path: '/thanks',
+                path: '/survey/thanks',
                 element: <Thanks/>
             }
         ]
     },
     {
-        path: '/show/:token',
+        path: '/survey/admin/:token',
         element: <Results_admin/>
     }
 ]);

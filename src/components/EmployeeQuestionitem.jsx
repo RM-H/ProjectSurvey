@@ -1,6 +1,7 @@
 import {Divider, Slider} from "@mui/material";
 import {base_url} from '../services/service.js'
 import {useEffect, useState} from "react";
+import {Spinner} from "./index.js";
 
 
 const Employeeitem = ({info, questions}) => {
@@ -16,7 +17,6 @@ const Employeeitem = ({info, questions}) => {
         setResponse(localresponse)
 
 
-
     }, []);
 
 
@@ -24,12 +24,12 @@ const Employeeitem = ({info, questions}) => {
 
 
         let basedata = response
-        let userid = info.user_id
+        let userid = info.id
 
         const index = response.emloyees.findIndex((item) =>
             (item.user_id == userid)
         )
-    
+
 
         basedata.emloyees[index][q] = a
         localStorage.setItem('user_responses', JSON.stringify(response))
@@ -45,10 +45,7 @@ const Employeeitem = ({info, questions}) => {
         setTimeout(() => {
             setShow(true)
 
-        }, 50)
-
-
-
+        }, 369)
 
 
     }, [info]);
@@ -83,8 +80,7 @@ const Employeeitem = ({info, questions}) => {
         <>
 
 
-
-            {show && response &&
+            {show && response ?
                 <div
                     className='column animate__animated animate__fadeInLeft is-12 mt-6 borderrad1 shadowone px-6 clrten'
                     style={{border: '3px solid #1B95A2'}}>
@@ -258,6 +254,13 @@ const Employeeitem = ({info, questions}) => {
 
 
                 </div>
+                :
+                <div className='column is-12 mt-6 is-flex is-align-items-center is-justify-content-center ' style={{minHeight: '60dvh'}}>
+
+                    <Spinner/>
+                </div>
+
+
             }
 
 
