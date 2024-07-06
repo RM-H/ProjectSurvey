@@ -44,13 +44,13 @@ const Results_admin = () => {
                         مشخصات نظرسنجی
 
 
-                        <Link to={'https://mis.ofoghiranianteam.ir/admin/survey'}>
+                        <a href='https://mis.ofoghiranianteam.ir/admin/survey'>
                             <button className='button is-float-left clrtwo clrseventext'>
 
                                 بازگشت
                                 <ArrowBackIos/>
                             </button>
-                        </Link>
+                        </a>
 
 
                     </p>

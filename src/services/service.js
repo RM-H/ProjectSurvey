@@ -1,7 +1,7 @@
 import axios from "axios";
 
-export const url = ' http://192.168.1.111/api/v1/survey'
-export const base_url =' http://192.168.1.111'
+export const url = ' https://mis.ofoghiranianteam.ir/api/v1/survey'
+export const base_url =' https://mis.ofoghiranianteam.ir'
 
 
 export const getInfo= (token)=>{
