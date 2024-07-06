@@ -60,7 +60,7 @@ const Questionitem = ({info}) => {
                         <div
                             className='is-flex is-align-items-center is-justify-content-space-around  clrfour borderrad1 shadowone py-2'
                             style={{transform: 'translateY(-3rem)'}}>
-                            <img src="/asset/images/logo.png" className='bordercircle'
+                            <img src="/survey_asset/images/logo.png" className='bordercircle'
                                  alt="" style={{maxHeight: '3rem'}}/>
                             <p className=' has-text-weight-bold'>
                                 مجموعه افق ایرانیان

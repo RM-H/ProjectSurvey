@@ -6,6 +6,7 @@ import Landing from "./page/Landing.jsx";
 import Questions from "./page/Questions.jsx";
 import Thanks from "./page/Thanks.jsx";
 import Results_admin from "./page/Results_admin.jsx";
+import Notfound from "./page/Notfound.jsx";
 
 const router = createBrowserRouter([
     {
@@ -25,12 +26,20 @@ const router = createBrowserRouter([
             {
                 path: '/survey/thanks',
                 element: <Thanks/>
-            }
+            } ,
+
+
         ]
     },
     {
         path: '/survey/admin/:token',
-        element: <Results_admin/>
+        element: <Results_admin/>,
+
+    },
+    {
+        path: '*',
+        element: <Notfound/>
+
     }
 ]);
 ReactDOM.createRoot(document.getElementById('root')).render(

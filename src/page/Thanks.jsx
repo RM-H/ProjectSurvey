@@ -11,7 +11,7 @@ const Thanks = () => {
 
                     <img
 
-                        src="/asset/images/check.png"
+                        src="/survey_asset/images/check.png"
                         alt=""
                         style={{maxHeight: '4rem'}}/>
                     <article className=' '>

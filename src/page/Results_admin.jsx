@@ -1,4 +1,4 @@
-import {useParams} from 'react-router-dom'
+import {useNavigate, useParams} from 'react-router-dom'
 import {useEffect, useState} from "react";
 import {getInfo, base_url} from "../services/service.js";
 import {Spinner} from "../components/index.js";
@@ -10,6 +10,7 @@ const Results_admin = () => {
     const {token} = useParams()
     const [data, setData] = useState(false)
 
+    const nav = useNavigate()
 
     const getdata = async () => {
         const formdata = new FormData()
@@ -21,6 +22,7 @@ const Results_admin = () => {
 
 
             alert(response.data.error)
+            nav('/survey/notfound/1')
         }
 
     }
@@ -76,7 +78,7 @@ const Results_admin = () => {
                         </tr>
                         <tr className="">
                             <th className="has-text-right">وضعیت</th>
-                            <td>{data.survey.done==1 ? 'انجام شده':'در انتظار تکمیل'}</td>
+                            <td>{data.survey.done == 1 ? 'انجام شده' : 'در انتظار تکمیل'}</td>
                         </tr>
 
                         </tbody>
@@ -99,27 +101,27 @@ const Results_admin = () => {
 
                                 <tr className="">
                                     <td className="">{data.survey.q1_text}</td>
-                                    <td className="">%{data.survey.q1_answer*20}</td>
+                                    <td className="">%{data.survey.q1_answer * 20}</td>
                                 </tr>
                                 <tr className="">
                                     <td className="">{data.survey.q2_text}</td>
-                                    <td className="">%{data.survey.q2_answer*20}</td>
+                                    <td className="">%{data.survey.q2_answer * 20}</td>
                                 </tr>
                                 <tr className="">
                                     <td className="">{data.survey.q3_text}</td>
-                                    <td className="">%{data.survey.q3_answer*20}</td>
+                                    <td className="">%{data.survey.q3_answer * 20}</td>
                                 </tr>
                                 <tr className="">
                                     <td className="">{data.survey.q4_text}</td>
-                                    <td className="">%{data.survey.q4_answer*20}</td>
+                                    <td className="">%{data.survey.q4_answer * 20}</td>
                                 </tr>
                                 <tr className="">
                                     <td className="">{data.survey.q5_text}</td>
-                                    <td className="">%{data.survey.q5_answer*20}</td>
+                                    <td className="">%{data.survey.q5_answer * 20}</td>
                                 </tr>
                                 <tr className="clrtwo ">
                                     <td className="clrseventext">میانگین</td>
-                                    <td className="clrseventext">%{data.survey.average*20}</td>
+                                    <td className="clrseventext">%{data.survey.average * 20}</td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -130,7 +132,8 @@ const Results_admin = () => {
                                 data.surveyusers.map((item) => (
                                     <div key={item.user_id} className='borderrad1 my-3 shadowone pt-2'>
 
-                                        <div className='is-flex is-justify-content-space-around is-align-items-center mb-3'>
+                                        <div
+                                            className='is-flex is-justify-content-space-around is-align-items-center mb-3'>
                                             <p className='has-text-weight-bold   '>{item.name} {'   '} {item.family}</p>
                                             <img className='bordercircle' src={`${base_url}/${item.avatar}`}
                                                  style={{maxHeight: '6rem'}}/>
@@ -152,24 +155,24 @@ const Results_admin = () => {
 
                                             <tr className="">
                                                 <td className="">{item.question1_text}</td>
-                                                <td className="">%{item.question1_answer*20}</td>
+                                                <td className="">%{item.question1_answer * 20}</td>
                                             </tr>
                                             <tr className="">
                                                 <td className="">{item.question2_text}</td>
-                                                <td className="">%{item.question2_answer*20}</td>
+                                                <td className="">%{item.question2_answer * 20}</td>
                                             </tr>
                                             <tr className="">
                                                 <td className="">{item.question3_text}</td>
-                                                <td className="">%{item.question3_answer*20}</td>
+                                                <td className="">%{item.question3_answer * 20}</td>
                                             </tr>
                                             <tr className="">
                                                 <td className="">{item.question4_text}</td>
-                                                <td className="">%{item.question4_answer*20}</td>
+                                                <td className="">%{item.question4_answer * 20}</td>
                                             </tr>
 
                                             <tr className="clrtwo ">
                                                 <td className="clrseventext">میانگین</td>
-                                                <td className="clrseventext">%{item.average_number*20}</td>
+                                                <td className="clrseventext">%{item.average_number * 20}</td>
                                             </tr>
                                             </tbody>
                                         </table>
@@ -182,11 +185,7 @@ const Results_admin = () => {
                         </>
 
 
-
                     }
-
-
-
 
 
                 </div>
@@ -205,7 +204,7 @@ const Results_admin = () => {
         <>
 
             <div className='columns is-flex is-multiline paddingx dvh p-6 is-align-items-center ' style={{
-                backgroundImage: 'url(/asset/images/wallpaper.svg)',
+                backgroundImage: 'url(/survey_asset/images/wallpaper.svg)',
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat',
 

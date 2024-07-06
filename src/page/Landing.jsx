@@ -1,4 +1,4 @@
-import {useNavigate} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import {Spinner} from '../components'
 import {useEffect, useState} from "react";
 import {getInfo} from '../services/service.js'
@@ -6,12 +6,13 @@ import {getInfo} from '../services/service.js'
 const Landing = () => {
 
     const [data, setData] = useState(false)
+    const {token} = useParams()
 
 
     // getting survey info
     const getData = async () => {
         const formdata = new FormData()
-        formdata.append('token', 'x22')
+        formdata.append('token', token)
         const response = await getInfo(formdata)
         if (response.data.code == 1) {
 
@@ -19,7 +20,7 @@ const Landing = () => {
             if (response.data.survey.done == 1) {
                 nav('/survey/thanks')
             } else {
-                console.log(response.data)
+
                 localStorage.setItem('data', JSON.stringify(response.data))
                 localStorage.setItem('user_responses', JSON.stringify({
                     'ofogh': {
@@ -50,7 +51,11 @@ const Landing = () => {
 
 
         } else {
+
+            nav('/survey/notfound/1')
             alert(response.data.error)
+
+
         }
 
     }
@@ -139,7 +144,7 @@ const Landing = () => {
                 <div className='column is-12-tablet is-flex-grow-0 clrseven   shadowone borderrad1 has-text-centered'
                 >
 
-                    <img src="/asset/images/logo.png" alt=""
+                    <img src="/survey_asset/images/logo.png" alt=""
                          style={{maxHeight: '3.6rem', transform: 'translateY(-2.3rem)'}}/>
                     {
                         content
