@@ -62,7 +62,7 @@ const Landing = () => {
 
     useEffect(() => {
 
-        getData()
+        // getData()
 
 
     }, []);
